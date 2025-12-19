@@ -43,7 +43,10 @@ const port = process.env.PORT || 5000;
 
 // --- Middlewares ---
 // Allows your Next.js app to make requests to this server
-app.use(cors());
+app.use(cors({
+    origin: ["https://cross-talk-sigma.vercel.app", "http://localhost:3000"],
+    credentials: true
+}));
 // Allows the server to accept JSON data in the request body
 app.use(express.json()); 
 app.use(cookieParser());
